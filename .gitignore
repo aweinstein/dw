@@ -1,1 +1,4 @@
 *.mat
+*.scpt
+DiffusionGeometry/Utils/IPDM/IPDM/html/
+*.jpg
