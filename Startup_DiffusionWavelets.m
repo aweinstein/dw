@@ -21,6 +21,11 @@ appendpath(([Prefix 'Examples']));
 fprintf('Startup_DiffusionWavelets.m: disabling case sensitivity warning ... \n');
 warning('off','MATLAB:dispatcher:InexactMatch');
 
+fprintf('Executing Startup_DiffusionGeometry')
+cd DiffusionGeometry
+Startup_DiffusionGeometry();
+cd ..
+
 function appendpath(string)
 
 fprintf('\t%s\\ \n', string);
