@@ -1,6 +1,12 @@
 % Compute the DW tree for the grid 
+% Run make_T_grid.py before
 
-T_grids = {'T_grid_16',	'T_grid_4',  'T_grid_8'};
+clear all
+close all
+clc
+
+T_grids = {'T_grid_16',	'T_grid_4',  'T_grid_8',
+           'T_grid_sl_16',	'T_grid_sl_4',  'T_grid_sl_8'};
 
 GSOptions = struct('StopDensity',1,'Threshold',1e-2);
 opts = struct('Wavelets', true, 'OpThreshold', 1e-4, 'GSOptions', GSOptions);
