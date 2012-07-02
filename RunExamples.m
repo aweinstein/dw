@@ -157,6 +157,10 @@ end;
 
 fprintf('\n');
 
+% Added by AJW
+min_eigenval = min(eig(G.T));
+fprintf('The smallest eigenvalue of T is %f \n', min_eigenval)
+
 return;
 
 fprintf('\n');

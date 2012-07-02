@@ -74,11 +74,12 @@ if strcmpi(ExampleName, 'Circle')
         %      Diffusion = MakeDiffusion(Points, Delta, TPrecision);
         
         if DebugPlots
-            figure; scatter(Points(:,1), Points(:,2)); title('Circle: Points');
+            figure; scatter(Points(1,:), Points(2,:)); title('Circle: Points');
             figure; imagesc(Diffusion.T); title('Circle: image');
             
             if EigPlot
-                figure; plot(flipud(sort(abs(eigs(Diffusion.T, N-2))))); title('Circle: Eigs');
+                %figure; plot(flipud(sort(abs(eigs(Diffusion.T, N-2))))); title('Circle: Eigs');
+                figure; plot(flipud(sort(eigs(Diffusion.T, N-2)))); title('Circle: Eigs');
             end
             [V, D] = eigs(Diffusion.T, 4);
             figure; scatter(V(:,2), V(:,3)); title('Circle: Coifman-Lafon embedding');
