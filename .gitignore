@@ -2,3 +2,4 @@
 *.scpt
 DiffusionGeometry/Utils/IPDM/IPDM/html/
 *.jpg
+*.pyc
