@@ -5,23 +5,30 @@ close all
 clc
 
 
+use_self_loop = true;
+if use_self_loop,
+    load T_circle_selfloop_256
+    fn = 'circle_tree_sl';
+else
+    load T_circle_256 % Created by make_T_circle.py
+    fn = 'circle_tree';
+end
 
-load T_circle_256 % Created by make_T_circle.py
-%load T_circle_selfloop_256
-
-D = diag(sum(W,1));
-T = D^-0.5 * W * D^-0.5;
+%D = diag(sum(W,1));
+%T = D^-0.5 * W * D^-0.5;
 load_file = false;
 
 if load_file,
-    load('circle_tree')
+    load(fn)
+    fprintf('Loaded %s\n', fn)
 else
     GSOptions = struct('StopDensity',1,'Threshold',1e-2);
     opts = struct('Wavelets', true, 'OpThreshold', 1e-2, 'GSOptions', GSOptions);
     tic
     Tree = DWPTree(T, 15, 1e-10, GSOptions); 
     toc
-    save('circle_tree', 'Tree')
+    save(fn, 'Tree')
+    fprintf('Tree saved in %s\n', fn)
 end
 
 % Make function as linear combination of two wavelet functions

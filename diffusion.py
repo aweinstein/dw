@@ -22,8 +22,9 @@ def get_T(G):
     Computing the normalized laplacian by hand. It seems there are some
     inconsistencies using nx.normalized_laplacian when G has selfloops.
     '''
-    A = nx.adj_matrix(G)
+    A = nx.adj_matrix(G, nodelist=sorted(G.nodes()))
     D = np.array(np.sum(A,1)).flatten()
+
     Disqrt = np.array(1 / np.sqrt(D))
     Disqrt = np.diag(Disqrt)
     L = np.diag(D) - A
