@@ -204,9 +204,12 @@ function tree_name_CreateFcn(hObject, eventdata, handles)
 
 f = cell(4,1);
 f{1} = 'circle_tree';
-f{2} = 'Tree_grid_4';
-f{3} = 'Tree_grid_8';
-f{4} = 'Tree_grid_16';
+f{2} = 'circle_tree_sl';
+f{3} = 'circle_ex_tree';
+f{4} = 'Tree_grid_4';
+f{5} = 'Tree_grid_8';
+f{6} = 'Tree_grid_16';
+f{7} = 'Tree_grid_ex1';
 set(hObject, 'String', f)
 % Hint: popupmenu controls usually have a white background on Windows.
 %       See ISPC and COMPUTER.
@@ -249,7 +252,8 @@ name = lower(contents{get(handles.tree_name,'Value')});
 x = Tree{j,s}.ExtBasis(:,i);
 if strfind(name, 'grid')
     N = sqrt(length(x));
-    imagesc(reshape(x,N,N))
+    %imagesc(reshape(x,N,N))
+    surf(reshape(x,N,N))
 else
     plot(x)
 end
