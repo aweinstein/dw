@@ -136,14 +136,14 @@ figure;
 for j = 1:4,
     subplot(2,2,j);
     scatter3(G.EigenVecs(:,2),G.EigenVecs(:,3),G.EigenVecs(:,4),15,Tree{j,1}.ExtBasis(:,1));hold on;
-    title(sprintf('Diffusion scaling function at scale %d',k));
+    title(sprintf('Diffusion scaling function at scale %d',j));
 end;
 
 figure;
 for j = 1:4,
     subplot(2,2,j);
     scatter3(G.EigenVecs(:,2),G.EigenVecs(:,3),G.EigenVecs(:,4),15,Tree{j,2}.ExtBasis(:,1));hold on;
-    title(sprintf('Diffusion wavelet at scale %d',k));
+    title(sprintf('Diffusion wavelet at scale %d',j));
 end;
 
 % Show some compressed powers of T
