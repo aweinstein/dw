@@ -5,7 +5,7 @@
 
 
 if ~exist('AnisotropicDataLoaded')
-   fprintf('Figure4.m: Anistropic data not found; run "AnistropicData.m" first\n');
+   fprintf('Figure4.m: Anistropic data not found; run "AnisotropicData.m" first\n');
    return;
 end
 
