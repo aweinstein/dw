@@ -206,6 +206,7 @@ function tree_name_CreateFcn(hObject, eventdata, handles)
 f{1} = 'circle_tree';
 f{end+1} = 'circle_tree_sl';
 f{end+1} = 'circle_ex_tree';
+f{end+1} = 'Tree_ani_circle';
 % f{end+1} = 'Tree_grid_4';
 % f{end+1} = 'Tree_grid_sl_4';
 % f{end+1} = 'Tree_grid_8';

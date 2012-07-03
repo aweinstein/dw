@@ -3,7 +3,7 @@ function f_hat = best_k_approx(Tree, wc, l)
 coeffs = wc(:,4);
 [~, i_sort_coeffs] = sort(abs(coeffs), 'descend');
 
-N = size(wc, 1);
+N = size(Tree{1,1}.Basis,2);
 f_hat = zeros(N, 1);
 
 
