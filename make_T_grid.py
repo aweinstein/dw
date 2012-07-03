@@ -18,17 +18,18 @@ def make_T(N, add_selfloops=False):
             G.add_edge(n, n)
             
     T, _ = get_T(G)
+    L = nx.laplacian(G, nodelist=sorted(G.nodes()))
     
-    return T
+    return T, L
 
 for N in [4, 8, 16]:
-    T = make_T(N)
+    T, L = make_T(N)
     fn = 'T_grid_%d' % N
-    savemat(fn, {'T':T}, oned_as='column')
+    savemat(fn, {'T':T, 'L':L}, oned_as='column')
     print 'Saved as %s' % fn
 
-    T = make_T(N, True)
+    T, L = make_T(N, True)
     fn = 'T_grid_sl_%d' % N
-    savemat(fn, {'T':T}, oned_as='column')
+    savemat(fn, {'T':T, 'L':L}, oned_as='column')
     print 'Saved as %s' % fn
 
